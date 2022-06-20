@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css">
+
+    <title>Ainshams Dashboard</title>
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>
+
+    <div id="myModal_1" class="modal_loading">
+
+        <!-- Modal content -->
+        <div class="modal_loading-content">
+            <div id="loading_location"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="myModal3" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> اضافة عميل</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+         
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-pane fade show active">
+
+                        <div class="card popup-form" id="clienttableForm">
+
+                            <div class="name" id="clients_name_">
+                                <label for="name-textbox" class="form-label">الاسم</label>
+                                <input type="text" class="form-control" id="clients_name" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_phone_">
+                                <label for="name-textbox" class="form-label">التليفون</label>
+                                <input type="text" class="form-control" id="clients_phone" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_email_">
+                                <label for="name-textbox" class="form-label">البريد</label>
+                                <input type="text" class="form-control" id="clients_email" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_type_">
+                                <label for="name-textbox" class="form-label">النوع</label>
+                                <input type="text" class="form-control" id="clients_type" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_username_">
+                                <label for="name-textbox" class="form-label">اسم المستخدم</label>
+                                <input type="text" class="form-control" id="clients_username" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_password_">
+                                <label for="name-textbox" class="form-label">كلمة السر</label>
+                                <input type="password" class="form-control" id="clients_password" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_role_">
+                                <label for="name-textbox" class="form-label">الصلاحيات</label>
+                                <input type="number" class="form-control" id="clients_role" placeholder="">
+                            </div>
+
+                            <a class="btn btn-success client-btn">اضف عميل</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal2" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">عن المنتج</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+         
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-pane fade show active">
+
+                        <div class="card popup-form" id="tableForm">
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal4" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> مزيد عن الاوردار</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+         
+          </button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="card order-form" id="ordertableForm">
+                        <div class="card-header">
+                        </div>
+                        <table id="moreordertable">
+                            <tr>
+                                <th>تفاصيل</th>
+                                <th>الحالة</th>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- alerts -->
+    <div class="alert-danger-al collapse ">Hello</div>
+    <div id="myModal5" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تاكيد الاوردرات</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+         
+          </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#currentclient" type="button" role="tab" aria-controls="currentclient" aria-selected="true">عميل حالي</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="new-tab" data-bs-toggle="tab" data-bs-target="#newClient" type="button" role="tab" aria-controls="newclient" aria-selected="false">عميل جديد</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="currentclient" role="tabpanel" aria-labelledby="current-tab"> <label>اسم العميل : </label><select class='form-control select2' id='assign_select_search'>
+ 
+                        </select>
+
+                            <br><input class="form-check-input" type="checkbox" value="" id="delcheck">
+                            <label class="form-check-label" for="delcheck">
+                          توصيل
+                        </label>
+                            <br>
+                            <label class="form-check-label">
+                          العنوان
+                        </label>
+                            <input type="text" class="form-control" id="address" aria-describedby="emailHelp" placeholder="عنوان" style="padding-top:0 !important;">
+                            <a class="btn btn-success btn-send-order"> اضف اوردر</a>
+                        </div>
+                        <div class="tab-pane fade" id="newClient" role="tabpanel" aria-labelledby="new-tab">
+
+                            <div class="name" id="clients_name_">
+                                <label for="name-textbox" class="form-label">الاسم</label>
+                                <input type="text" class="form-control" id="clients_name" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_phone_">
+                                <label for="name-textbox" class="form-label">التليفون</label>
+                                <input type="text" class="form-control" id="clients_phone" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_email_">
+                                <label for="name-textbox" class="form-label">البريد</label>
+                                <input type="text" class="form-control" id="clients_email" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_type_">
+                                <label for="name-textbox" class="form-label">النوع</label>
+                                <input type="text" class="form-control" id="clients_type" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_username_">
+                                <label for="name-textbox" class="form-label">اسم المستخدم</label>
+                                <input type="text" class="form-control" id="clients_username" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_password_">
+                                <label for="name-textbox" class="form-label">كلمة السر</label>
+                                <input type="password" class="form-control" id="clients_password" placeholder="">
+                            </div>
+
+                            <div class="name" id="clients_role_">
+                                <label for="name-textbox" class="form-label">الصلاحيات</label>
+                                <input type="number" class="form-control" id="clients_role" placeholder="">
+                            </div>
+
+                            <a class="btn btn-success client-btn" style="margin: auto; display:block; margin-top:10px;">اضف عميل</a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container " id="login_page" style="display: none;">
+
+
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                <div class="card my-5 red-bg">
+
+                    <form class="card-body cardbody-color p-lg-5">
+                        <div class="text-center">
+                            <img src="img/logo (1).svg" width="200px" style="margin-bottom: 50px;" alt="profile">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="User Name" style="padding-top:0 !important;">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="Password" style="padding-top:0 !important;">
+                        </div>
+                        <input type="checkbox" value="lsRememberMe" id="rememberMe" hidden> <label for="rememberMe" hidden>Remember me</label>
+
+                        <div class="text-center"><button id="login_id" onclick="lsRememberMe()" class="btn-color px-5 mb-5 w-100">Login</button></div>
+
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="layout" id="all-count" style="display: none;">
+        <div class="right col-auto">
+
+            <div class="fixed-menu">
+                <div class="logo">
+                    <img src="img/logo (1).svg" alt="">
+                </div>
+                <nav>
+
+                    <div class="nav nav-tabs left-nav" id="nav-tab" role="tablist">
+
+                        <a class="nav-link menu-item active" id="nav-prices-tab" data-bs-toggle="tab" href="#nav-prices" role="tab" aria-controls="nav-prices" aria-selected="true"> <i class="fa-solid fa-coins"></i> <b> التسعير</b></a>
+                        <a class="nav-link  menu-item" id="nav-orders-tab" data-bs-toggle="tab" href="#nav-orders" role="tab" aria-controls="nav-orders" aria-selected="false" onclick="orders_func()"><i class="fa-solid fa-gear" ></i><b> الاوردارت</b></a>
+                        <a class="nav-link  menu-item" id="nav-clients-tab" data-bs-toggle="tab" href="#nav-clients" role="tab" aria-controls="nav-clients" aria-selected="false"><i class="fa-solid fa-user"></i><b> العملاء</b></a>
+
+
+                        <button id="logout_id"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+
+                    </div>
+                </nav>
+
+            </div>
+
+        </div>
+        <div class="left col">
+            <!-- Pricing Tab -->
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-prices" role="tabpanel" aria-labelledby="nav-prices-tab">
+                    <div class="product-selected">دفاتر</div>
+                    <div class="nav nav-tab products-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link products-item selected active" id="NCRButton" data-expand="true" data-bs-toggle="tab" href="#nav-ncr" role="tab" aria-controls="nav-ncr" aria-selected="true">دفاتر</a>
+                        <a class="nav-link products-item" id="cardsButton" data-expand="false" data-bs-toggle="tab" href="#nav-cards" role="tab" aria-controls="nav-cards" aria-selected="false">كروت</a>
+                        <a class="nav-link products-item" id="foldersButton" data-expand="false" data-bs-toggle="tab" href="#nav-folders" role="tab" aria-controls="nav-folders" aria-selected="false">فولدرات</a>
+                        <a class="nav-link products-item" id="magazineButton" data-expand="false" data-bs-toggle="tab" href="#nav-magazine" role="tab" aria-controls="nav-magazine" aria-selected="false">بروشور - مجلة</a>
+                        <a class="nav-link products-item" id="flyerButton" data-expand="false" data-bs-toggle="tab" href="#nav-flyer" role="tab" aria-controls="nav-flyer" aria-selected="false">فلايرات</a>
+                        <a class="nav-link products-item" id="stickerButton" data-expand="false" data-bs-toggle="tab" href="#nav-sticker" role="tab" aria-controls="nav-sticker" aria-selected="false">استيكرات</a>
+                        <a class="nav-link products-item" id="notebookButton" data-expand="false" data-bs-toggle="tab" href="#nav-notebook" role="tab" aria-controls="nav-notebook" aria-selected="false">نوت بوك</a>
+                        <a class="nav-link products-item" id="envelopeButton" data-expand="false" data-bs-toggle="tab" href="#nav-envelope" role="tab" aria-controls="nav-envelope" aria-selected="false">أظرف</a>
+                        <a class="nav-link products-item" id="letterheadButton" data-expand="false" data-bs-toggle="tab" href="#nav-letterhead" role="tab" aria-controls="nav-letterhead" aria-selected="false">ليتر هيد</a>
+                        <a class="nav-link products-item" id="booksButton" data-expand="false" data-bs-toggle="tab" href="#nav-books" role="tab" aria-controls="nav-books" aria-selected="false">كتب</a>
+                        <a class="nav-link products-item" id="anotherpaperButton" data-expand="false" data-bs-toggle="tab" href="#nav-anotherpaper" role="tab" aria-controls="nav-anotherpaper" aria-selected="false">ورق غير
+              مصنف</a>
+                    </div>
+                    <div class="tab-pane fade show active" id="nav-ncr" role="tabpanel" aria-labelledby="nav-ncr">
+                        <div class="card ncrs-form" id="ncrsForm">
+                            <div class="card-header">
+                                دفاتر
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="ncrDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">A3</a></li>
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">40*30</a></li>
+                                            <li><a class="dropdown-item red">20*30</a></li>
+                                            <li><a class="dropdown-item red">25*17.5</a></li>
+                                            <li><a class="dropdown-item red">15*20</a></li>
+                                            <li><a class="dropdown-item red">10*15</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-two">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="copies">
+                                        <label for="copies-textbox" class="form-label">عدد الصور</label>
+                                        <input type="number" min="0" class="form-control" id="copies-textbox" placeholder="">
+                                    </div>
+                                    <div class="colors">
+                                        <label for="colors-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                    </div>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+
+                                    </div>
+
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-cards" role="tabpanel" aria-labelledby="nav-cards">
+                        <div class="card cards-form" id="cardsFrom">
+                            <div class="card-header">
+                                كروت
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="cardsDropdown" data-detect="none">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">9*5</a></li>
+                                            <li><a class="dropdown-item red">9.5*5.5</a></li>
+                                            <li><a class="dropdown-item red">7*11</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="" required>
+
+                                    </div>
+                                    <div class="faces" id="faces">
+                                        <label for="faces-textbox" class="form-label">عدد الاوجه</label>
+                                        <input type="number" class="form-control" id="faces-textbox" placeholder="" required>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="solofanCheck">
+                                            <label class="form-check-label" for="solofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="uvCheck">
+                                            <label class="form-check-label" for="uvCheck">
+                        UV
+                      </label>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <select class="form-control" style="margin-top: 10px;" class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-folders" role="tabpanel" aria-labelledby="nav-folders">
+                        <div class="card folders-form" id="foldersFrom">
+                            <div class="card-header">
+                                فولدرات
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="faces" id="faces">
+                                        <label for="faces-textbox" class="form-label">عدد الاوجه</label>
+                                        <input type="number" class="form-control" id="faces-textbox" min="1" max="2" placeholder="">
+                                    </div>
+                                    <div class="colors">
+                                        <label for="colors-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="solofanCheck">
+                                            <label class="form-check-label" for="solofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="uvCheck">
+                                            <label class="form-check-label" for="uvCheck">
+                        UV
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="pocketCheck">
+                                            <label class="form-check-label" for="pocketCheck">
+                        جيب
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="windowCheck">
+                                            <label class="form-check-label" for="windowCheck">
+                        شباك
+                      </label>
+                                        </div>
+                                    </div>
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-magazine" role="tabpanel" aria-labelledby="nav-magazine">
+                        <div class="card magazine-form" id="magazineFrom">
+                            <div class="card-header">
+                                بروشور - مجلة
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="magazineDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">24*16</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-two">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="div-two mr-top">
+
+                                    </div>
+                                    <div class="dropdown" id="coveringDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                      نوع التجليد
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red" data-detect="دبوس">دبوس</a></li>
+                                            <li><a class="dropdown-item red" data-detect="هارد كافر">هارد كافر</a></li>
+                                            <li><a class="dropdown-item red" data-detect="خياطة">خياطة</a></li>
+                                            <li><a class="dropdown-item red" data-detect="سلك">سلك</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="head-line"> الداخلي </div>
+                                <div class="section">
+
+                                    <div class="div-two">
+                                        <div class="inqty" id="inqty">
+                                            <label for="inqty-textbox" class="form-label">الكمية</label>
+                                            <input type="number" class="form-control" id="inqty-textbox" placeholder="">
+                                        </div>
+                                        <div class="dropdown" id="intypeDropdown">
+                                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                        نوع الورق
+                      </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item red" data-detect="كوشيه">كوشيه</a></li>
+                                                <li><a class="dropdown-item red" data-detect="ورق طبع">ورق طبع</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="div-three mr-top">
+                                        <div class="inweight" id="inweight">
+                                            <label for="inweight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="inweight-textbox" placeholder="">
+                                        </div>
+                                        <div class="incolor" id="incolor">
+                                            <label for="incolor-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" class="form-control" id="incolor-textbox" placeholder="">
+                                        </div>
+                                        <div class="infaces" id="infaces">
+                                            <label for="infaces-textbox" class="form-label">عدد الاوجه</label>
+                                            <input type="number" class="form-control" id="infaces-textbox" min="1" max="4" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="insolofanCheck">
+                                            <label class="form-check-label" for="insolofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="inuvCheck">
+                                            <label class="form-check-label" for="inuvCheck">
+                        UV
+                      </label>
+                                        </div>
+                                    </div>
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                        <option value="offset">أوفست</option>
+                                       <option value="digital">ديجيتال</option>
+                                       </select>
+
+                                </div>
+                                <div id="coverMagazine">
+                                    <div class="head-line"> الغلاف </div>
+                                    <div class="div-three mr-top">
+                                        <div class="coverweight ml-20">
+                                            <label for="coverweight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="coverweight-textbox" placeholder="">
+                                        </div>
+                                        <div id="covercolor" class="covercolor ml-20">
+                                            <label for="covercolor-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" class="form-control" id="covercolor-textbox" placeholder="">
+                                        </div>
+                                        <div id="coverfaces" class="coverfaces ml-20">
+                                            <label for="coverfaces-textbox" class="form-label">عدد الاوجه</label>
+                                            <input type="number" class="form-control" id="coverfaces-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two  mt-20">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="coversolofanCheck">
+                                            <label class="form-check-label" for="coversolofanCheck">
+                                      سلوفان
+                                     </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="coveruvCheck">
+                                            <label class="form-check-label" for="coveruvCheck">
+                                      UV
+                                         </label>
+                                        </div>
+
+                                        <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                        <div class="mprice">
+                                            <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                            <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-flyer" role="tabpanel" aria-labelledby="nav-flyer">
+                        <div class="card flyer-form" id="flyerForm">
+                            <div class="card-header">
+                                فلايرات
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="flyerDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">A3</a></li>
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">24*16</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="qty" id="qty">
+                                            <label for="qty-textbox" class="form-label">الكمية</label>
+                                            <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                        </div>
+                                        <div class="weight">
+                                            <label for="weight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="weight-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="faces" id="faces">
+                                            <label for="faces-textbox" class="form-label">عدد الأوجه</label>
+                                            <input type="number" class="form-control" id="faces-textbox" min="1" max="2" placeholder="">
+                                        </div>
+                                        <div class="colors">
+                                            <label for="colors-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="solofanCheck">
+                                            <label class="form-check-label" for="solofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="uvCheck">
+                                            <label class="form-check-label" for="uvCheck">
+                        UV
+                      </label>
+                                        </div>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-sticker" role="tabpanel" aria-labelledby="nav-sticker">
+                        <div class="card sticker-form" id="stickerFrom">
+                            <div class="card-header">
+                                استيكرات
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="stickerDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">ربع</a></li>
+                                            <li><a class="dropdown-item red">A3</a></li>
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="colors">
+                                        <label for="colors-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="solofanCheck">
+                                            <label class="form-check-label" for="solofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="uvCheck">
+                                            <label class="form-check-label" for="uvCheck">
+                        UV
+                      </label>
+                                        </div>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-notebook" role="tabpanel" aria-labelledby="nav-notebook">
+                        <div class="card notebook-form" id="notebookFrom">
+                            <div class="card-header">
+                                نوت بوك
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="notebookDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">25*17.5</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-two">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+
+                                    <div class="div-two mr-top">
+
+                                    </div>
+                                    <div class="dropdown" id="coveringDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                      نوع التجليد
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red" data-detect="دبوس">دبوس</a></li>
+                                            <li><a class="dropdown-item red" data-detect="هارد كافر">هارد كافر</a></li>
+                                            <li><a class="dropdown-item red" data-detect="خياطة">خياطة</a></li>
+                                            <li><a class="dropdown-item red" data-detect="سلك">سلك</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="head-line"> الداخلي </div>
+                                <div class="section">
+
+                                    <div class="div-two">
+                                        <div class="inqty" id="inqty">
+                                            <label for="inqty-textbox" class="form-label">الكمية</label>
+                                            <input type="number" class="form-control" id="inqty-textbox" placeholder="">
+                                        </div>
+                                        <div class="inweight" id="inweight">
+                                            <label for="inweight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="inweight-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="incolor" id="incolor">
+                                            <label for="incolor-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" class="form-control" id="incolor-textbox" placeholder="">
+                                        </div>
+                                        <div class="infaces" id="infaces">
+                                            <label for="infaces-textbox" class="form-label">عدد الاوجه</label>
+                                            <input type="number" class="form-control" id="infaces-textbox" min="1" max="4" placeholder="">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="head-line"> الغلاف </div>
+                                <div class="div-three mr-top">
+                                    <div class="coverweight ml-20">
+                                        <label for="coverweight-textbox" class="form-label">الوزن</label>
+                                        <input type="number" class="form-control" id="coverweight-textbox" placeholder="">
+                                    </div>
+                                    <div id="covercolor" class="covercolor ml-20">
+                                        <label for="covercolor-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" class="form-control" id="covercolor-textbox" placeholder="">
+                                    </div>
+                                    <div id="coverfaces" class="coverfaces ml-20">
+                                        <label for="coverfaces-textbox" class="form-label">عدد الاوجه</label>
+                                        <input type="number" class="form-control" id="coverfaces-textbox" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="div-two  mt-20">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="coversolofanCheck">
+                                        <label class="form-check-label" for="coversolofanCheck">
+                      سلوفان
+                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="coveruvCheck">
+                                        <label class="form-check-label" for="coveruvCheck">
+                      UV
+                    </label>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-envelope" role="tabpanel" aria-labelledby="nav-envelope">
+                        <div class="card envelope-form" id="envelopeFrom">
+                            <div class="card-header">
+                                أظرف
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="envelopeDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">امريكاني</a></li>
+                                            <li><a class="dropdown-item red">C4</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="qty mt-20">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="faces mt-20">
+                                        <label for="faces-textbox" class="form-label">عدد الاوجه</label>
+                                        <input type="number" class="form-control" id="faces-textbox" min="1" max="2" placeholder="">
+                                    </div>
+                                    <div class="colors mt-20">
+                                        <label for="faces-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-letterhead" role="tabpanel" aria-labelledby="nav-letterhead">
+                        <div class="card letterhead-form" id="letterheadFrom">
+                            <div class="card-header">
+                                ليتر هيد
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+
+
+                                    <div class="qty mt-20">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+                                    <div class="colors mt-20">
+                                        <label for="faces-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                    </div>
+                                    <div class="dropdown" id="letterheadDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      الوزن
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">100 Gm</a></li>
+                                            <li><a class="dropdown-item red">80 Gm</a></li>
+                                            <li><a class="dropdown-item red">70 Gm</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-books" role="tabpanel" aria-labelledby="nav-books">
+                        <div class="card books-form" id="booksFrom">
+                            <div class="card-header">
+                                كتب
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="booksDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">25*17.5</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-two">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="qty" id="qty">
+                                        <label for="qty-textbox" class="form-label">الكمية</label>
+                                        <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                    </div>
+
+                                    <div class="div-two mr-top">
+
+                                    </div>
+                                    <div class="dropdown" id="coveringDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                      نوع التجليد
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red" data-detect="دبوس">دبوس</a></li>
+                                            <li><a class="dropdown-item red" data-detect="هارد كافر">هارد كافر</a></li>
+                                            <li><a class="dropdown-item red" data-detect="خياطة">خياطة</a></li>
+                                            <li><a class="dropdown-item red" data-detect="سلك">سلك</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="head-line"> الداخلي </div>
+                                <div class="section">
+
+                                    <div class="div-two">
+                                        <div class="inqty" id="inqty">
+                                            <label for="inqty-textbox" class="form-label">الكمية</label>
+                                            <input type="number" class="form-control" id="inqty-textbox" placeholder="">
+                                        </div>
+                                        <div class="dropdown" id="intypeDropdown">
+                                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                        نوع الورق
+                      </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item red" data-detect="كوشيه">كوشيه</a></li>
+                                                <li><a class="dropdown-item red" data-detect="ورق طبع">ورق طبع</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="div-three mr-top">
+                                        <div class="inweight" id="inweight">
+                                            <label for="inweight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="inweight-textbox" placeholder="">
+                                        </div>
+                                        <div class="incolor" id="incolor">
+                                            <label for="incolor-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" class="form-control" id="incolor-textbox" placeholder="">
+                                        </div>
+                                        <div class="infaces" id="infaces">
+                                            <label for="infaces-textbox" class="form-label">عدد الاوجه</label>
+                                            <input type="number" class="form-control" id="infaces-textbox" min="1" max="4" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mr-top">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="insolofanCheck">
+                                            <label class="form-check-label" for="insolofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="inuvCheck">
+                                            <label class="form-check-label" for="inuvCheck">
+                        UV
+                      </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="head-line"> الغلاف </div>
+                                <div class="div-three mr-top">
+                                    <div class="coverweight ml-20">
+                                        <label for="coverweight-textbox" class="form-label">الوزن</label>
+                                        <input type="number" class="form-control" id="coverweight-textbox" placeholder="">
+                                    </div>
+                                    <div id="covercolor" class="covercolor ml-20">
+                                        <label for="covercolor-textbox" class="form-label">عدد الألوان</label>
+                                        <input type="number" class="form-control" id="covercolor-textbox" placeholder="">
+                                    </div>
+                                    <div id="coverfaces" class="coverfaces ml-20">
+                                        <label for="coverfaces-textbox" class="form-label">عدد الاوجه</label>
+                                        <input type="number" class="form-control" id="coverfaces-textbox" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="div-two  mt-20">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="coversolofanCheck">
+                                        <label class="form-check-label" for="coversolofanCheck">
+                      سلوفان
+                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="coveruvCheck">
+                                        <label class="form-check-label" for="coveruvCheck">
+                      UV
+                    </label>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-anotherpaper" role="tabpanel" aria-labelledby="nav-anotherpaper">
+                        <div class="card anotherpaper-form" id="anotherpaperForm">
+                            <div class="card-header">
+                                ورق غير مصنف
+                                <a class="btn btn-danger btn-clear">مسح</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="section">
+                                    <div class="dropdown" id="anotherpaperDropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      المقاس
+                    </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item red" data-detect="rob3">ربع</a></li>
+                                            <li><a class="dropdown-item red">A3</a></li>
+                                            <li><a class="dropdown-item red">A4</a></li>
+                                            <li><a class="dropdown-item red">A5</a></li>
+                                            <li><a class="dropdown-item red">A6</a></li>
+                                            <li><a class="dropdown-item red">24*16</a></li>
+                                            <li><a class="dropdown-item red">20*10</a></li>
+                                            <li><a class="dropdown-item red">مقاس اخر</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="height" id="height">
+                                            <label for="height-textbox" class="form-label">الطول</label>
+                                            <input type="number" class="form-control" id="height-textbox" placeholder="">
+                                        </div>
+                                        <div class="width" id="width">
+                                            <label for="width-textbox" class="form-label">العرض</label>
+                                            <input type="number" class="form-control" id="width-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two">
+                                        <div class="qty" id="qty">
+                                            <label for="qty-textbox" class="form-label">الكمية</label>
+                                            <input type="number" class="form-control" id="qty-textbox" placeholder="">
+                                        </div>
+                                        <div class="dropdown" id="intypeDropdown">
+                                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-detect="" aria-expanded="false">
+                        نوع الورق
+                      </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item red" data-detect="كوشيه">كوشيه</a></li>
+                                                <li><a class="dropdown-item red" data-detect="ورق طبع">ورق طبع</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="weight">
+                                            <label for="weight-textbox" class="form-label">الوزن</label>
+                                            <input type="number" class="form-control" id="weight-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="faces" id="faces">
+                                            <label for="faces-textbox" class="form-label">عدد الأوجه</label>
+                                            <input type="number" class="form-control" id="faces-textbox" min="1" max="2" placeholder="">
+                                        </div>
+                                        <div class="colors">
+                                            <label for="colors-textbox" class="form-label">عدد الألوان</label>
+                                            <input type="number" min="1" max="4" class="form-control" id="colors-textbox" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="div-two mt-20">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="insolofanCheck">
+                                            <label class="form-check-label" for="insolofanCheck">
+                        سلوفان
+                      </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="inuvCheck">
+                                            <label class="form-check-label" for="inuvCheck">
+                        UV
+                      </label>
+                                        </div>
+                                    </div>
+
+                                    <select class="form-control" style="margin-top:10px;" name="printing-type" id="p_type">
+                                     <option value="offset">أوفست</option>
+                                    <option value="digital">ديجيتال</option>
+                                    </select>
+                                    <div class="mprice">
+                                        <label for="mprice-textbox" class="form-label">تسعير يدوى</label>
+                                        <input type="number" min="1" class="form-control" id="manualqtyPrice" placeholder="">
+                                    </div>
+                                </div>
+
+                                <a class="btn btn-danger search-btn">بحث</a>
+                                <div class="price-container">
+                                    <div class="unit-price">
+                                        <div class="head-line"> سعر الوحدة</div>
+                                        <h1 class="price" id="unitPrice">45</h1>
+                                    </div>
+                                    <div class="qty-price">
+                                        <div class="head-line"> سعر الكمية</div>
+                                        <h1 class="price" id="qtyPrice">450</h1>
+
+                                    </div>
+                                </div>
+                                <label for="commentT">أضف تعليق</label>
+                                <textarea class="form-control comment-textarea" id="commentT"></textarea>
+                                <a class="btn btn-danger insert-btn">اضف الى المنتجات</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show active">
+
+                        <div class="card order-form" id="ordertableForm">
+                            <div class="card-header">
+                                <div class="organize-head">
+                                    <h3 style="margin-bottom: 10px;margin-top: 20px;">طلب</h3>
+                                    <div style="margin-bottom: 10px;margin-top: 20px;" id="priceall" class="total-price-tab"></div>
+                                    <a style="margin-bottom: 10px;margin-top: 20px;" class="btn btn-danger btn-clear">مسح كل المنتجات</a>
+                                </div>
+
+
+                            </div>
+                            <table id="ordertable">
+                                <thead>
+                                    <tr>
+                                        <th class="col" scope="col">النوع</th>
+                                        <th class="col" scope="col">المقاس </th>
+                                        <th class="col" scope="col">الكمية</th>
+                                        <th class="col" scope="col">السعر</th>
+                                        <th class="col" scope="col">المزيد</th>
+                                        <th class="col" scope="col">مسح النتج</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button type="button" class="btn btn-success btn-conf-send-order" data-toggle="modal" data-target="#myModal5.bd-example-modal-lg">اضف اوردر</button></td>
+                    </div>
+                </div>
+
+                <!-- Orders tab -->
+                <div class="tab-pane fade" id="nav-orders" role="tabpanel" aria-labelledby="nav-orders-tab">
+                    <div class="tab-pane fade show active">
+                        <div class="row  g-3 data-orderss">
+                            <div class="col-md-6">
+                                <label for="start">تاريخ البداية</label><input class="form-control" type="date" id="start" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="end">تاريخ النهاية</label><input class="form-control" type="date" id="end" />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="all_fin"> الكل :</label><input class="form-control" id="all_fin" readonly/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="paid_fin"> المدفوع :</label><input class="form-control" id="paid_fin" readonly/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="remain_fin">المتبقى :</label><input class="form-control" id="remain_fin" readonly/>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="select_client">العملاء :</label><select class="form-control" id="select_client"></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="num_fin">العدد :</label><input class="form-control" id="num_fin" readonly/>
+                            </div>
+                        </div>
+                        <div class="card order-form" id="allordertableForm">
+
+                            <div class="card-header orderss">
+                                <h5 style="text-align:center; margin-bottom:20px;">الاوردرات</h5>
+                                <div class="dropdown" style="margin-bottom:20px;">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownfilter" data-bs-toggle="dropdown" aria-expanded="false">
+                                      حالة الأوردر
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item filterOrders">تصميم</a></li>
+                                        <li><a class="dropdown-item filterOrders">انتظار</a></li>
+                                        <li><a class="dropdown-item filterOrders">تشغيل</a></li>
+                                        <li><a class="dropdown-item filterOrders">جاهز للشحن</a></li>
+                                        <li><a class="dropdown-item filterOrders">في الطريق</a></li>
+                                        <li><a class="dropdown-item filterOrders">انتهاء</a></li>
+                                        <li><a class="dropdown-item filterOrders">معطل</a></li>
+                                        <li><a class="dropdown-item filterOrders">الغاء</a></li>
+
+                                        <li>
+                                            <a class="dropdown-item filterOrders">الكل</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown" style="margin-bottom:20px;">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownfiltermoney" data-bs-toggle="dropdown" aria-expanded="false">
+                                      حالة الدفع
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item filterOrdersmoney">مدفوع</a></li>
+                                        <li><a class="dropdown-item filterOrdersmoney">غير مدفوع</a></li>
+                                        <li><a class="dropdown-item filterOrdersmoney">غير مكتمل</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <table id="allordertable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col">التسلسل</th>
+                                        <th scope="col" class="col">التاريخ</th>
+                                        <th scope="col" class="col">الاسم </th>
+                                        <th scope="col" class="col">الحالة</th>
+                                        <th scope="col" class="col">النقديات</th>
+                                        <th scope="col" class="col">المزيد</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="orders-tablebody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- clients tab -->
+                <div class="tab-pane fade" id="nav-clients" role="tabpanel" aria-labelledby="nav-clients-tab">
+                    <div class="tab-pane fade show active">
+
+                        <div class="card order-form" id="clienttableForm">
+                            <div class="card-header">
+                                العملاء
+                                <button type="button" class="btn btn-primary btn-new" data-toggle="modal" data-target="#myModal3.bd-example-modal-lg"> اضافة عميل جديد</button>
+                            </div>
+                            <table id="clienttable">
+                                <thead>
+                                    <tr>
+                                        <th class="col" scope="col">التسلسل</th>
+                                        <th class="col" scope="col">الاسم </th>
+                                        <th class="col" scope="col">التليفون</th>
+                                        <th class="col" scope="col">البريد</th>
+                                        <th class="col" scope="col">النوع</th>
+                                        <th class="col" scope="col">اسم المستخدم</th>
+                                        <th class="col" scope="col">كلمة السر</th>
+                                        <th class="col" scope="col">الصلاحيات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="client-tablebody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/global.js"></script>
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../navigation.js"></script>
+        <script src="../database_functions_v2.js"></script>
+        <script src="../database_functions.js"></script>
+        <script src="../help_functions.js"></script>
+        <script src="../admin_function.js"></script>
+        <script src="../login_page.js"></script>
+        <script src="../json_func_admin.js"></script>
+        <script src="../direction_func_folders.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+        <script>
+            const rmCheck = document.getElementById("rememberMe");
+            var nameInput = document.getElementById("Username");
+            var passInput = document.getElementById("password");
+
+            $(document).ready(function() {
+                clients();
+                // $('.select2').select2();
+                $('#all-count').hide();
+
+                $('#logout_id').click(function() {
+                    $('#all-count').hide();
+                    nameInput.value = '';
+                    passInput.value = '';
+                    localStorage.username = '';
+                    localStorage.password = '';
+                    rmCheck.setAttribute("checked", "checked");
+
+                    localStorage.checkbox = '';
+
+                    login_page_check();
+                });
+
+                waiting_login();
+
+            });
+
+            function Loading_page_set() {
+                modal_1.style.display = "block";
+                document.getElementById("loading_location").innerHTML = `<div class="loader_1" ></div>`;
+            }
+
+            function Loading_page_clear() {
+                modal_1.style.display = "none";
+            }
+
+            async function waiting_login() {
+                if (localStorage.checkbox && localStorage.checkbox !== "") {
+                    rmCheck.setAttribute("checked", "checked");
+                    nameInput.value = localStorage.username;
+                    passInput.value = localStorage.password;
+
+                    var value__ = await login_page_check_auto(nameInput.value, passInput.value);
+                    if (!value__) {
+                        login_page_check();
+                    }
+                } else {
+                    // rmCheck.removeAttribute("checked");
+                    rmCheck.setAttribute("checked", "checked");
+
+                    nameInput.value = "";
+                    passInput.value = "";
+                    login_page_check();
+
+
+                }
+            }
+
+            function lsRememberMe() {
+                if (rmCheck.checked && nameInput.value !== "" && passInput.value !== "") {
+                    localStorage.username = nameInput.value;
+                    localStorage.password = passInput.value;
+
+                    localStorage.checkbox = rmCheck.value;
+                } else {
+                    localStorage.username = "";
+                    localStorage.checkbox = "";
+                }
+            }
+        </script>
+</body>
+
+</html>

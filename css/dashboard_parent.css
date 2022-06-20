@@ -1,0 +1,1144 @@
+:root {
+    --blue-color: #1955CC;
+    --orange-color: #FD7D00;
+    --black-color: #2c2c2c;
+}
+
+.addstudent-pop {
+    display: flex;
+}
+
+.expired {
+    position: relative;
+    backdrop-filter: blur(100px);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.expired::after {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    content: attr(data-issue);
+    border-radius: 25px;
+    background-color: var(--black-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expandsession.back {
+    cursor: pointer;
+}
+
+.addstudent-pop .content-body {
+    width: 40%;
+    margin: auto;
+}
+
+.addstudent-pop .content-body .headding {
+    text-align: center;
+}
+
+.addstudent-pop .content-body hr {
+    line-height: 20px;
+}
+
+.ages-buttons-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.addstudent-pop .back-close {
+    display: flex;
+    justify-content: space-between;
+}
+
+.student-payment-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.student-payment-info .student-payment-labels {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.student-payment-info .student-payment-labels span {
+    margin: 0px 30px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container {
+    width: 250px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #2C2C2C33;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+}
+
+.payment-plans-container .header {
+    background-color: #1955CC;
+    border-radius: 10px 10px 0 0;
+    color: white;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-plans-container .between {
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.payment-plans-container li {
+    margin-left: 15px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container .price {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+}
+
+.payment-plans-container .offer-container {
+    display: flex;
+    padding: 15px;
+    padding-top: 0px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.payment-plans-container .offer-container span {
+    font-size: 13px;
+    color: var(--blue-color);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.payment-plans-container button {
+    background-color: #FD7D00;
+    color: white;
+    margin: auto;
+    display: block;
+}
+
+.payment-plans-container .price::before {
+    content: 'EGP';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    margin-left: -70px;
+    margin-top: -10px;
+}
+
+.payment-plans-container .price::after {
+    content: '/ Month';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    bottom: -15px;
+    margin-right: -70px;
+    margin-top: -10px;
+}
+
+.Schedule-button {
+    padding: 8px 20px;
+    box-shadow: 0px 0px 10px 4px #00000012;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    justify-content: space-around;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 300ms;
+}
+
+.Schedule-button.active,
+.Schedule-button:hover {
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.content-body button {
+    display: block;
+    margin-left: auto;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.ages-buttons-container .ages-button {
+    border: 0.5px solid #FFFFFF40;
+    box-shadow: 0px 0px 10px 4px #00000012;
+    border-radius: 5px;
+    background-color: white;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.ages-buttons-container .ages-button.active,
+.ages-buttons-container .ages-button:hover {
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.addstudent-pop .content-container {
+    width: 70%;
+    background-color: white;
+    border: 0.5px solid #0000001A;
+    box-shadow: 0px 0px 10px 0px #00000012;
+    border-radius: 5px;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto auto;
+    padding: 20px;
+}
+
+.addstudent-pop .content-container .close {
+    text-align: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.students-container-parent {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.students-container {
+    display: flex;
+    border-image-width: 100%;
+    align-items: center;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.content-container.body {
+    padding-bottom: 120px;
+}
+
+.sessoions-container-body {
+    display: flex;
+}
+
+.sessoions-container-body .next-session-btn {
+    height: 200px;
+    background-color: white;
+    width: 50px;
+    border-top: 3px solid var(--blue-color);
+    border-left: 3px solid var(--blue-color);
+    border-bottom: 3px solid var(--blue-color);
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    justify-content: center;
+    color: var(--black-color);
+    align-items: center;
+    transition: 300ms;
+    position: relative;
+    cursor: pointer;
+}
+
+.sessoions-container-body .next-session-btn:hover {
+    width: 100px;
+    background-color: #1955CC;
+    color: white;
+    padding-right: 10px;
+}
+
+.tab-content {
+    height: 53vh;
+    overflow-x: auto;
+}
+
+.sessoions-container-body .next-session-btn::before {
+    content: "Next Session";
+    font-size: 13px;
+    text-align: left;
+    margin-left: 15px;
+    transition: 300ms;
+    display: none;
+    cursor: pointer;
+}
+
+.sessoions-container-body .next-session-btn:hover::before {
+    display: block;
+}
+
+.sessoions-container-body .last-session-btn {
+    height: 200px;
+    background-color: white;
+    width: 50px;
+    border-top: 3px solid var(--blue-color);
+    border-right: 3px solid var(--blue-color);
+    border-bottom: 3px solid var(--blue-color);
+    border-radius: 0px 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    position: relative;
+    cursor: pointer;
+}
+
+.session-expand-comp {
+    background-color: white;
+    border: 1.5px dashed rgba(44, 44, 44, 0.2);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 4px #00000012;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+.session-expand-comp .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.session-expand-comp .paragraph {
+    font-size: 14px;
+}
+
+.sessoions-container-body .last-session-btn:hover {
+    width: 100px;
+    background-color: #1955CC;
+    color: white;
+    padding-left: 10px;
+}
+
+.sessoions-container-body .last-session-btn::after {
+    content: "Previous Session";
+    font-size: 13px;
+    text-align: right;
+    margin-right: 20px;
+    transition: 300ms;
+    display: none;
+    cursor: pointer;
+}
+
+.sessoions-container-body .last-session-btn:hover::after {
+    display: block;
+}
+
+.sessoions-container-body .tab-content {
+    margin: 0 30px;
+}
+
+.addstudent-pop input {
+    background: #F1F3F4;
+    height: 35px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #00000005;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.right-header input:focus {
+    border: 1px solid #00000030;
+}
+
+.student-block {
+    width: auto;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.student-block.Active {
+    width: auto;
+    font-size: 14px;
+}
+
+.student-block .studentage {
+    display: none;
+}
+
+.student-block {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.student-block:hover,
+.student-block.Active {
+    opacity: 1;
+}
+
+.student-block.Active .studentage {
+    font-size: 14px;
+    display: block;
+}
+
+.student-block .row {
+    display: flex;
+    align-items: center;
+}
+
+.student-block .student-img {
+    display: none;
+}
+
+.student-block.Active .student-img {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-block.Active img {
+    width: 140px;
+}
+
+.students-container .View-more {
+    width: 50px;
+}
+
+.students_list {
+    display: block;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #00000012;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 999;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+.students_list .student_item {
+    list-style: none;
+    padding: 3px;
+    font-size: 13px;
+    opacity: 0.6;
+    transition: 300ms;
+    cursor: pointer;
+    background-color: #2c2c2c00;
+    border-radius: 5px;
+}
+
+.students_list .student_item:hover {
+    opacity: 1;
+    background-color: #2c2c2c20;
+}
+
+.View-more .fa-chevron-right {
+    cursor: pointer;
+}
+
+.student-info {
+    padding: 15px;
+}
+
+.student-info span {
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.student-info span a {
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.package-container {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.headding {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--black-color);
+}
+
+.session-container {
+    padding: 20px;
+}
+
+.progress-headers {
+    padding: 0 100px;
+}
+
+.package-progress-container .befbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.package-container .progressbar-container {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.progressbar-container .progressbar {
+    background-color: var(--orange-color);
+    height: 20px;
+    border-radius: 20px;
+}
+
+.slice-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--black-color);
+    margin-bottom: 50px;
+}
+
+.slice-container .comp_container.right {
+    width: 53%;
+}
+
+.slice-container .comp_container.left {
+    width: 45%;
+}
+
+.session-container .countdown {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.countdown .comp_container {
+    margin: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.countdown .comp_container h5 {
+    font-size: 13px;
+    line-height: 10px;
+    margin-bottom: 20px;
+}
+
+.countdown .comp_container h1 {
+    font-size: 30px;
+    line-height: 10px;
+    margin-top: 30px;
+}
+
+.Statics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Stats_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.Stats_container h5 {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: -10px;
+    margin-top: 20px;
+    line-height: -10px;
+}
+
+.Stats_container h1 {
+    font-size: 25px;
+    color: var(--black-color);
+}
+
+.Stats_container .comp_container {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.taskscomp .paragraph,
+.feedbackcomp .paragraph {
+    position: relative;
+    padding-right: 50px;
+}
+
+.taskscomp .paragraph::after,
+.feedbackcomp .paragraph::after {
+    position: absolute;
+    content: attr(data-precent);
+    right: 20px;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.activty-comp {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.activty-comp-all {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.activities-container {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+    height: 200px;
+}
+
+.wrapper .carousel {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    transition: 300ms;
+}
+
+.achieve-comp {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 20px 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.achieve-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+}
+
+.achieve-comp .achieve-icon {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: block;
+}
+
+.activty-comp::after {
+    position: absolute;
+    content: 'Progress ' attr(data-progress) ' ' "%";
+    bottom: -10px;
+    color: #2c2c2c80;
+    font-size: 12px;
+}
+
+.activty-comp.upcomming .activty-icon {
+    box-shadow: 0px 2px 10px 4px #00000012;
+    background: #C4C4C433;
+}
+
+.activty-comp.upcomming .activty-name {
+    opacity: 0.4;
+}
+
+.activty-comp.upcomming .activty-progress-container {
+    visibility: collapse;
+}
+
+.activty-comp.upcomming::after {
+    width: 80%;
+    background-color: gray;
+    content: 'UPCOMMING';
+    font-family: 'cairo';
+    color: white;
+    bottom: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.activity-pop-progress {
+    position: relative;
+}
+
+.module-table-item.disabled {
+    opacity: 0.3;
+}
+
+.module-table-item.disabled:hover {
+    cursor: not-allowed;
+}
+
+.activty-comp-all .activty-icon {
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    background-color: lightgray;
+    display: block;
+}
+
+.activty-comp .activty-icon {
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    background-color: lightgray;
+    display: block;
+}
+
+.activty-comp .activty-icon.done {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border: 1px solid #0000001A;
+    box-shadow: 0px 2px 10px 4px #00000012;
+    position: relative;
+}
+
+.activity-thumb {
+    background-color: var(--orange-color);
+    height: 15px;
+    border-radius: 20px;
+}
+
+.activty-comp .activty-icon.done::after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 60px;
+    content: "\f00c";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #06b800;
+}
+
+.activty-progress-container {
+    width: 100%;
+    background: #C4C4C4;
+    height: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.activty-comp .activty-progress-container .skills-comp {
+    width: 130px;
+    background-color: white;
+    border: 1.5px dashed rgba(44, 44, 44, 0.2);
+    box-shadow: 0px 0px 10px 4px #00000012;
+    border-radius: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-comp {
+    margin: 30px;
+}
+
+.skills-comp .title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.skill-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.skill-icon img {
+    width: 190px;
+}
+
+@media screen and (max-width:1550px) {
+    .addstudent-pop .content-body {
+        width: 100%;
+        padding: 0 20%;
+    }
+    .addstudent-pop .content-container {
+        width: 90%;
+        background-color: white;
+        border: 0.5px solid #0000001A;
+        box-shadow: 0px 0px 10px 0px #00000012;
+        border-radius: 5px;
+        height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: auto auto;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .addstudent-pop .content-body {
+        width: 100%;
+        padding: 0 10%;
+    }
+    .addstudent-pop .content-container {
+        width: 90%;
+        background-color: white;
+        border: 0.5px solid #0000001A;
+        box-shadow: 0px 0px 10px 0px #00000012;
+        border-radius: 5px;
+        height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: auto auto;
+        padding: 15px;
+    }
+    .slice-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: var(--black-color);
+        flex-direction: column;
+    }
+    .slice-container .comp_container.left,
+    .slice-container .comp_container.right {
+        width: 100%;
+    }
+    .countdown {
+        justify-content: center;
+    }
+    .countdown .comp_container {
+        width: 100px;
+        margin-bottom: 20px
+    }
+    .session-container .Statics,
+    .session-container .countdown {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Stats_container .comp_container {
+        text-align: center;
+        width: 100px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:880px) {
+    .sessoions-container-body .tab-content {
+        margin: 0px;
+    }
+    .sessoions-container-body .next-session-btn {
+        height: 30px;
+        background-color: white;
+        width: 30px;
+        border: none;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        color: var(--black-color);
+        align-items: center;
+        transition: 300ms;
+        position: relative;
+        cursor: pointer;
+        background-color: #1955CC;
+        color: white;
+    }
+    .sessoions-container-body .next-session-btn:hover {
+        width: 30px;
+        background-color: #1955CC;
+        color: white;
+        padding-right: 0;
+    }
+    .tab-content {
+        height: auto;
+        overflow-x: auto;
+    }
+    .sessoions-container-body .next-session-btn::before {
+        display: none;
+    }
+    .sessoions-container-body .next-session-btn:hover::before {
+        display: none;
+    }
+    .sessoions-container-body .last-session-btn {
+        height: 30px;
+        background-color: var(--blue-color);
+        color: white;
+        width: 30px;
+        border-radius: 20px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms;
+        position: relative;
+        cursor: pointer;
+    }
+    .sessoions-container-body .last-session-btn:hover {
+        width: 30px;
+        padding: 0;
+    }
+    .sessoions-container-body .last-session-btn::after {
+        display: none;
+    }
+    .sessoions-container-body .last-session-btn:hover::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width:570px) {
+    .activty-comp {
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin: 20px 20px;
+        position: relative;
+        cursor: pointer;
+    }
+    .wrapper .carousel {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        z-index: 100000;
+        transition: 300ms;
+    }
+    .student-payment-info .student-payment-labels span {
+        margin: 0px 5px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+    }
+    .Stats_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-bottom: -20px;
+    }
+    .pages-navigation button a {
+        display: none;
+    }
+    .pages-navigation button {
+        margin-right: 30px;
+    }
+    .students-container-parent {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .students-container {
+        display: flex;
+        border-image-width: 100%;
+        align-items: center;
+        padding-top: 20px;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        justify-content: center;
+    }
+    .View-more .fa-chevron-right {
+        cursor: pointer;
+        transform: rotate(90deg);
+        margin-left: 117px;
+        margin-top: -75px;
+        position: absolute;
+        z-index: 1000;
+    }
+    .students_list {
+        display: block;
+        width: 200px;
+        background-color: white;
+        box-shadow: 0px 0px 10px 0px #00000012;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 999;
+        margin-top: -70px;
+        margin-left: -90px;
+    }
+    .student-info span {
+        font-size: 14px;
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+    .progress-headers {
+        padding: 0;
+    }
+    .slice-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: var(--black-color);
+        flex-direction: column;
+    }
+    .slice-container .comp_container.left,
+    .slice-container .comp_container.right {
+        width: 100%;
+    }
+    .countdown {
+        justify-content: center;
+    }
+    .countdown .comp_container {
+        width: 100px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .session-container .Statics,
+    .session-container .countdown {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Stats_container .comp_container {
+        text-align: center;
+        width: 100px;
+    }
+    .addstudent-pop .content-container {
+        width: 90%;
+        background-color: white;
+        border: 0.5px solid #0000001A;
+        box-shadow: 0px 0px 10px 0px #00000012;
+        border-radius: 5px;
+        height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: auto auto;
+        padding: 15px;
+    }
+    .addstudent-pop .content-body {
+        width: 100%;
+        margin: auto;
+        padding: 0;
+    }
+    .form-floating>.form-control {
+        padding: 1rem 0.75rem;
+        text-align: center;
+    }
+    .ages-buttons-container .ages-button {
+        border: 0.5px solid #FFFFFF40;
+        box-shadow: 0px 0px 10px 4px #00000012;
+        border-radius: 5px;
+        background-color: white;
+        width: auto;
+        padding: 0 5%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .content-body button {
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .ages-buttons-container .ages-button {
+        border: 0.5px solid #FFFFFF40;
+        box-shadow: 0px 0px 10px 4px #00000012;
+        border-radius: 5px;
+        background-color: white;
+        width: auto;
+        padding: 0 5px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: 500;
+    }
+}

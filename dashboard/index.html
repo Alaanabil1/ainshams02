@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>iSchool tech - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/159acad575.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;700;900&family=Roboto:wght@100;300;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+    <!-- Custom styles for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+
+    <script type="text/javascript"
+        src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!------------------------------------------------ Pages ------------------------------------------------>
+    <!------------------------------------------------ ----- ------------------------------------------------>
+    <!------------------------------------------------ ----- ------------------------------------------------>
+    <!------------------------------------------------ ----- ------------------------------------------------>
+    <!------------------------------------------------ ----- ------------------------------------------------>
+
+    <div id="myModal_1" class="modal_loading">
+
+        <!-- Modal content -->
+        <div class="modal_loading-content">
+            <div id="loading_location"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="collapse" id="loginSector">
+        <div class="header">
+            <div class="logo col-auto"><a href="../"><img href="#" src="../img/blue-logo.svg" alt=""></div></a>
+            <i class="fa-solid fa-bars menu-btn"></i>
+            <div class="nav col">
+                <i class="fa-solid fa-xmark close-btn"></i>
+                <ul class="main-nav">
+                    <li class="nav-items "><a href="../#home">Home</a></li>
+                    <li class="nav-items"><a href="../#programs">Programs </a></li>
+                    <!-- <li class="nav-items"><a href="#">About </a></li> -->
+                    <li class="nav-items"><a href="../contactus.html">Contact us </a></li>
+                </ul>
+                <div class="vertical-div"></div>
+                <ul class="login-nav">
+                    <li class="nav-items"><a href="../Reg/">Enroll</a></li>
+                    <li class="nav-items active"><a href="../Dashboard/">Login</a></li>
+                    <Button class="btn btn-primary"><a href="../free/">Book a Free Session</a></Button>
+                </ul>
+            </div>
+
+        </div>
+        <!-- Outer Row -->
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        </div>
+                                        <form class="user">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" id="Username"
+                                                    aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="password" placeholder="Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input type="checkbox" class="custom-control-input" id="rememberMe"
+                                                        hidden>
+                                                    <label class="custom-control-label" for="rememberMe" hidden>Remember
+                                                        Me</label>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                        <button id="login_id" onclick="lsRememberMe()"
+                                            class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </button>
+
+                                        <hr>
+                                        <!-- <div class="text-center">
+                                            <a class="small" id="forgetPassword">Forgot Password?</a>
+                                        </div> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse" id="forgetpasswordSector">
+        <div class="header">
+
+            <div class="logo col-auto"><img href="#" src="../img/blue-logo.svg" alt=""></div>
+            <i class="fa-solid fa-bars menu-btn"></i>
+            <div class="nav col">
+                <i class="fa-solid fa-xmark close-btn"></i>
+                <ul class="main-nav">
+                    <li class="nav-item active"><a href="#">Home</a></li>
+                    <li class="nav-item"><a href="#">Programs </a></li>
+                    <li class="nav-item"><a href="#">About </a></li>
+                    <li class="nav-item"><a href="#">Contact us </a></li>
+                </ul>
+                <div class="vertical-div"></div>
+                <ul class="login-nav">
+                    <li class="nav-item"><a href="../Reg/">Enroll</a></li>
+                    <li class="nav-item"><a href="../Dashboard/">Login</a></li>
+                    <Button class="btn btn-primary"><a href="../free/">Book a Free Session</a></Button>
+                </ul>
+            </div>
+
+        </div>
+        <!-- Outer Row -->
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                                            <p class="mb-4">We get it, stuff happens. Just enter your email address
+                                                below
+                                                and we'll send you a link to reset your password!</p>
+                                        </div>
+                                        <form class="user">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user"
+                                                    id="exampleInputEmail" aria-describedby="emailHelp"
+                                                    placeholder="Enter Email Address...">
+                                            </div>
+                                            <a href="" class="btn btn-primary btn-user btn-block">
+                                                Reset Password
+                                            </a>
+                                        </form>
+                                        <hr>
+                                        <div class="text-center">
+                                            <a class="small" id="CreateAccount" href="../Reg/">Create an Account!</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" id="loginBtn">Already have an account? Login!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow collapse" id="navg_bar">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <!-- <div id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <img height="30" src="img/blue-logo.svg" alt=""> 
+        </div> -->
+
+        <div>
+            <img height="30" src="img/blue-logo.svg" alt="">
+        </div>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto align-items-center">
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+
+            <li class="nav-item dropdown no-arrow">
+
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="clientname">Client Name</span>
+                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                    </a>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container collapse" id="student_sector">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center" id="student_sector_container">
+
+        </div>
+
+    </div>
+
+    
+    <div class="collapse" id="dashboardSector">
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div class="left-side-static">
+                <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                    <!-- Sidebar - Brand -->
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                        <div class="sidebar-brand-icon">
+                            <img src="img/white-logo.svg" alt="">
+                        </div>
+
+                    </a>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider my-0">
+
+                    <li class="nav-item leftside " id="overviewTap_id">
+                        <a class="nav-link " data-id="#overviewTap">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Overview</span></a>
+                    </li>
+
+                    <li class="nav-item leftside active" id="sessioninfoTap_id">
+                        <a class="nav-link" data-id="#sessioninfoTap">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Trial Session</span></a>
+                    </li>
+
+                    <li class="nav-item leftside" id="feedbackTap_id">
+                        <a class="nav-link" data-id="#feedbackTap">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Sessions</span></a>
+                    </li>
+
+                    <!-- Nav Item - Dashboard -->
+
+                    <!-- Nav Item - Charts -->
+                    <li class="nav-item leftside" id="sessioninfoTap_id">
+                        <a class="nav-link" data-id="#certificationTap">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Certification</span></a>
+                    </li>
+
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item leftside" id="roadmapTap_id">
+                        <a class="nav-link" data-id="#roadmapTap">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Roadmap</span></a>
+                    </li>
+                    <li class="nav-item leftside" id="tasksTap_id">
+                        <a class="nav-link" data-id="#tasksTap">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>Tasks</span></a>
+                    </li>
+                    <li class="nav-item leftside" id="financeTap_id">
+                        <a class="nav-link" data-id="#financeTap">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>Finance</span></a>
+                    </li>
+
+
+                    <li class="nav-item leftside" id="packagesTap_id">
+                        <a class="nav-link">
+                            <i class="fa-solid fa-shapes"></i>
+                            <span>Upgrade</span></a>
+                    </li>
+
+
+
+
+
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
+
+                    <!-- Sidebar Toggler (Sidebar) -->
+
+
+
+
+                </ul>
+            </div>
+
+
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <div id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <img height="30" src="img/blue-logo.svg" alt="">
+                        </div>
+
+
+
+                        <Label id="reg_status">
+                            Registered
+                        </Label>
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto align-items-center">
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="clientname_2">Client
+                                        Name</span>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <div class="student-select">
+                        <span class=" collapse" id="sector_sea_st">
+                            <Label>
+                                Kids :
+                            </Label>
+                            <select id="select_id_student" class="select2">
+                                <option value=""></option>
+                            </select>
+
+                        </span>
+                    </div>
+                    <!-- End of Topbar -->
+
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- Taps -- -- -- -- -- -- -- -- -- -- -- -- -->
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                    <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -V- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                    <div class="container-fluid">
+                        <div id="sessioninfoTap">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3 headding-color">
+                                            Join Class Using
+                                        </div>
+                                        <div class="card-body confirmation">
+                                            <div class="joinclass-container">
+                                                <span><img src="img/laptop.svg" alt="">
+                                                    <h5>PC or Laptop</h5>
+                                                </span>
+                                                <span><img src="img/cam.svg" alt="">
+                                                    <h5>Webcam</h5>
+                                                </span>
+                                                <span><img src="img/voice-recorder.svg" alt="">
+                                                    <h5>Microphone</h5>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3 headding-color">
+                                            Outcomes
+                                        </div>
+                                        <div class="card-body outcomes">
+                                            <li> <img src="img/icons-learning-path-04.svg" alt=""> Certificate of
+                                                attendees.</li>
+                                            <li> <img src="img/elements-17.svg" alt=""> Create a unique 2D game.</li>
+                                            <li> <img src="img/elements-16.svg" alt=""> Understand coding concepts.</li>
+                                            <li> <img src="img/elements-13.svg" alt=""> Explore why we need coding.</li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Page Heading -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 headding-color">
+                                    <h5>Join Using ZOOM</h5>
+                                </div>
+                                <div class="card-body confirmation">
+                                    <p>Your session will start at </p>
+                                    <div class="box">
+                                        <div class="allTime">
+                                            <div class="wp days"></div>
+                                            <div class="wp hrs"></div>
+                                            <div class="wp min"></div>
+                                            <div class="wp sec"></div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-warning joinnow-btn disabled" target="_blank" disabled>Join
+                                        Session Now</a>
+                                    <p class="join-pc">Join Session From PC</p>
+
+                                </div>
+                            </div>
+
+                            <!-- Content Row -->
+
+
+                            <!-- Footer -->
+
+                            <!-- End of Footer -->
+                        </div>
+                        <div class="row" id="certificationTap">
+                            <div class="col card shadow mb-4">
+                                <div class="card-body cert-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+
+                                                <th scope="col">Certification Name</i>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="insert_certificationTap">
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards-container" id="roadmapTap">
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-11.svg" alt="">
+                                    <div class="title">3d Coding</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-12.svg" alt="">
+                                    <div class="title">Mobile Development</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-13.svg" alt="">
+                                    <div class="title">ML & AI</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-14.svg" alt="">
+                                    <div class="title">Python</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-15.svg" alt="">
+                                    <div class="title">MineCraft</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-16.svg" alt="">
+                                    <div class="title">Web Development</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-17.svg" alt="">
+                                    <div class="title">Game Development</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                            <div class="card border-bottom-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <img src="img/elements-18.svg" alt="">
+                                    <div class="title">Freelancing</div>
+                                    <div class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                                        voluptate ad dolorum recusandae, voluptates error repellendus est unde quisquam
+                                        voluptatem, ducimus tenetur inventore, quia tempora culpa eligendi. Veritatis,
+                                        mollitia pariatur.</div>
+                                    <button class="btn btn-primary">Explore more</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card schedule-container shadow" id="packagesTap02" style="display: none;">
+                            <div class="row body">
+
+                                <div class="col form">
+                                    <h4 style="color: #2c2c2c;">Select Schedule</h4>
+                                    <hr>
+
+                                    <div class="row schedule-table">
+                                        <div class="row scheduletablehead ">
+                                            <span class="col">Starting date</span>
+                                            <span class="col">Day</span>
+                                            <span class="col">Time</span>
+                                            <span class="col">Language</span>
+                                            <span class="col"></span>
+                                        </div>
+                                        <div class="row scheduletableitem">
+                                            <span class="col-auto" hidden>52</span>
+                                            <span class="col">22/07/2022</span>
+                                            <span class="col">Tuesday</span>
+                                            <span class="col">4:30 PM</span>
+                                            <span class="col">lan</span>
+
+                                            <span class="col"><a class="check"></a></span>
+                                        </div>
+                                        <div class="row scheduletableitem">
+                                            <span class="col-auto" hidden>52</span>
+                                            <span class="col">22/07/2022</span>
+                                            <span class="col">Tuesday</span>
+                                            <span class="col">4:30 PM</span>
+                                            <span class="col">lan</span>
+
+                                            <span class="col"><a class="check"></a></span>
+                                        </div>
+                                        <div class="row scheduletableitem">
+                                            <span class="col-auto" hidden>52</span>
+                                            <span class="col">22/07/2022</span>
+                                            <span class="col">Tuesday</span>
+                                            <span class="col">4:30 PM</span>
+                                            <span class="col">lan</span>
+
+                                            <span class="col"><a class="check"></a></span>
+                                        </div>
+                                        <div class="row scheduletableitem">
+                                            <span class="col-auto" hidden>52</span>
+                                            <span class="col">22/07/2022</span>
+                                            <span class="col">Tuesday</span>
+                                            <span class="col">4:30 PM</span>
+                                            <span class="col">lan</span>
+
+                                            <span class="col"><a class="check"></a></span>
+                                        </div>
+                                        <div class="row scheduletableitem">
+                                            <span class="col-auto" hidden>52</span>
+                                            <span class="col">22/07/2022</span>
+                                            <span class="col">Tuesday</span>
+                                            <span class="col">4:30 PM</span>
+                                            <span class="col">lan</span>
+
+                                            <span class="col"><a class="check"></a></span>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <button class="btn btn-primary next" id="schedule_next">Next</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card shadow package-card" id="packagesTap">
+                            <div class="back-btn"><i class="fa-solid fa-arrow-left"></i></div>
+                            <div class="packages-container monthly">
+
+                                <div class="package-comp monthly">
+                                    <div class="package-title">Monthly Plan</div>
+                                    <div class="package-body">
+                                        <ul class="package-features">
+                                            <!-- <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li> -->
+                                        </ul>
+
+
+                                        <div class="package-price">
+                                            <h1 id="Pack_1_paid_as">1,990</h1>
+
+                                        </div>
+                                        <hr>
+                                        <ul class="package-billing-way">
+                                            <li class="package-billing-way-item" id="Pack_1_hours">
+                                                Billed as 1,990/Month
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_1_billing">
+                                                Consist of 12 Payments
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_1_inst">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_1_hour_rate">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                        <!-- <div class="promo-title">Promo code</div>
+                                        <div class="promo-container">
+                                            <input type="text">
+                                            <button class="btn btn-secondary btn-sm">Apply</button>
+                                        </div> -->
+                                        <button class="btn btn-secondary buy-now btn-lg" id="Pack_1_btn">Buy
+                                            Now</button>
+
+                                    </div>
+
+                                </div>
+                                <div class="package-comp Qua">
+                                    <div class="package-title">Quarterly Plan</div>
+                                    <div class="package-body">
+                                        <ul class="package-features">
+                                            <!-- <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li> -->
+                                        </ul>
+                                        <!-- <hr> -->
+                                        <div class="package-price">
+                                            <h1 id="Pack_2_paid_as">5,370</h1>
+
+                                        </div>
+                                        <hr>
+                                        <ul class="package-billing-way">
+                                            <li class="package-billing-way-item" id="Pack_2_hours">
+                                                Billed as 5,370/3 Month
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_2_billing">
+                                                Consist of 12 Payments
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_2_inst">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_2_hour_rate">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                        <!-- <div class="promo-title">Promo code</div>
+                                        <div class="promo-container">
+                                            <input type="text">
+                                            <button class="btn btn-secondary btn-sm">Apply</button>
+                                        </div> -->
+                                        <button class="btn btn-secondary buy-now btn-lg" id="Pack_2_btn">Buy
+                                            Now</button>
+
+                                    </div>
+
+                                </div>
+                                <div class="package-comp Anu">
+                                    <div class="package-title">Annually Plan</div>
+                                    <div class="package-body">
+                                        <ul class="package-features">
+                                            <!-- <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li>
+                                        <li class="package-features-item">
+                                            is simply dummy text of the printing and typesetting industry. Lorem
+                                        </li> -->
+                                        </ul>
+                                        <!-- <hr> -->
+                                        <div class="package-price">
+                                            <h1 id="Pack_3_paid_as">19,080</h1>
+
+                                        </div>
+                                        <hr>
+                                        <ul class="package-billing-way">
+                                            <li class="package-billing-way-item" id="Pack_3_hours">
+                                                Billed as 5,370/3 Month
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_3_billing">
+                                                Consist of 12 Payments
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_3_inst">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                            <li class="package-billing-way-item" id="Pack_3_hour_rate">
+                                                Total fees 23,880 EGP
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                        <!-- <div class="promo-title">Promo code</div>
+                                        <div class="promo-container">
+                                            <input type="text">
+                                            <button class="btn btn-secondary btn-sm">Apply</button>
+                                        </div> -->
+                                        <button class="btn btn-secondary buy-now btn-lg" id="Pack_3_btn">Buy
+                                            Now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="overviewTap">
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <div class="card shadow mb-4 basic-info">
+                                        <div class="card-header headding-color py-3">
+                                            Basic Information
+                                        </div>
+                                        <div class="card-body">
+                                            <li> Student Name : <a id="student_name_over">Alaa Nabil Mostafa Mohamed</a>
+                                            </li>
+                                            <li> Student ID : <a id="student_id_over">Alaa Nabil Mostafa Mohamed</a>
+                                            </li>
+                                            <li> Group ID : <a id="student_grop_over">B-FO-1518</a> </li>
+                                            <li> Support Agent : <a id="student_cs_over">Hala Adel Mohamed</a></li>
+                                        </div>
+                                        <div class="card border-left-warning shadow py-2 session-remain"
+                                            id="action_place">
+                                            <div class="card-body">
+                                                <div class="session-text">
+                                                    <div class="sessions-number"><a id="num_of_sessions">0</a> Sessions
+                                                        left</div>
+                                                    <div class="session-alert" id="warning_id">Please settle the bill
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn-danger" id="action_btn_id">Take Action</button>
+                                            </div>
+                                        </div>
+                                        <div class="">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card shadow mb-4 membership-info">
+                                        <div class="card-header headding-color py-3">
+                                            Membership Information
+                                        </div>
+                                        <div class="card-body">
+                                            <li> Membership Status : <a id="mem_status_id">Expired</a> </li>
+                                            <li> Registered Quota : <a id="mem_q_id">48 Session/s</a> </li>
+                                            <li> Paid Quota : <a id="mem_p_id">12 Session/s</a></li>
+                                            <li id="unpaid_id"> Unpaid Quota <a id="mem_u_id"> 0 Session/s</a> </li>
+                                            <li> Attend : <a id="mem_a_id">11 Session/s</a> </li>
+                                            <li> Absent : <a id="mem_b_id">1 Session/s</a></li>
+                                            <li> Remain : <a id="mem_r_id">1 Session/s</a></li>
+                                            <button class="btn btn-success" style="margin:auto; display:block;"><i
+                                                    class="fa-brands fa-whatsapp"></i> Chat with <a
+                                                    style="color:white;">Hala</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 headding-color">
+                                    Next Session
+                                </div>
+                                <div class="card-body confirmation">
+                                    <p>Your session will start at </p>
+                                    <div class="box">
+                                        <div class="session-start">
+                                            <div class="wp days"></div>
+                                            <div class="wp hrs"></div>
+                                            <div class="wp min"></div>
+                                            <div class="wp sec"></div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary joinnow-btn disabled" disabled>Join Session
+                                        Now</button>
+                                    <p class="join-pc">Join Session From PC</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="feedbackTap">
+                            <table class="feedbacktable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Session #</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Level</th>
+                                        <th scope="col">Attendance</th>
+                                        <th scope="col">Record Link</th>
+                                        <th scope="col">Feedback</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="session_table_id">
+                                    <!-- <tr>
+                                        <td style="color: rgb(0, 0, 0)">Session 01</td>
+                                        <td style="color: rgb(0, 0, 0)">28/10/2022</td>
+                                        <td style="color: rgb(0, 0, 0)">CS</td>
+                                        <td style="color: rgb(0, 0, 0)">Foundation</td>
+                                        
+                                        <td  style="color: green;" > <i class="fa-solid fa-square-check"></i></td>
+                                        <td class="link"> <a href="#"><i class="fa-solid fa-link"></i></a></td>
+                                        <td class="link"><a data-bs-toggle="modal" href="#feedbackPop" role="button"><i class="fa-solid fa-eye"></i></a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="color: rgb(0, 0, 0)">Session 02</td>
+                                        <td style="color: rgb(0, 0, 0)">28/10/2022</td>
+                                        <td style="color: rgb(0, 0, 0)">CS</td>
+                                        <td style="color: rgb(0, 0, 0)">Foundation</td>
+
+                                        <td  style="color: red" > <i class="fa-solid fa-square-xmark"></i></td>                                        
+                                        <td class="link"> <a href="#"><i class="fa-solid fa-link"></i></a></td>
+                                        <td class="link"><a data-bs-toggle="modal" href="#feedbackPop" role="button"><i class="fa-solid fa-eye"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: rgb(172, 172, 172)">Session 03</td>
+                                        <td style="color: rgb(172, 172, 172)">28/10/2022</td>
+                                        <td style="color: rgb(172, 172, 172)">CS</td>
+                                        <td style="color: rgb(172, 172, 172)">Foundation</td>
+
+                                        <td  style="color: rgb(172, 172, 172)" colspan="3" > UPCOMMING</i></td>                                        
+
+
+                                    </tr>
+                                    <tr>
+                                        <td style="color: rgb(172, 172, 172)">Session 04</td>
+                                        <td style="color: rgb(172, 172, 172)">28/10/2022</td>
+                                        <td style="color: rgb(172, 172, 172)">CS</td>
+                                        <td style="color: rgb(172, 172, 172)">Foundation</td>
+
+                                        <td  style="color: rgb(172, 172, 172)" colspan="3" > UPCOMMING</i></td>        
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            <!-- <nav aria-label="..." class="pagination-center">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item ">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav> -->
+                        </div>
+                        <div id="financeTap">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="Installments-tab" data-toggle="tab"
+                                        href="#Installments" role="tab" aria-controls="Installments"
+                                        aria-selected="true">Installments</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="Packages-tab" data-toggle="tab" href="#Packages-exp"
+                                        role="tab" aria-controls="Packages" aria-selected="false">Packages</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade " id="Packages-exp" role="tabpanel"
+                                    aria-labelledby="Packages-tab">
+                                    <table class="table-resp">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Student Name</th>
+                                                <th scope="col">Qouta</th>
+                                                <th scope="col">Paid</th>
+                                                <th scope="col">Remain</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="package_table_rows">
+                                            <!-- <tr>
+                                                <td data-label="Student Name" scope="col">Student Name</td>
+                                                <td data-label="Qouta" scope="col">50 Session/s</td>
+                                                <td data-label="Used" scope="col">30 Session/s</td>
+                                                <td data-label="Remain" scope="col">20 Session/s</td>
+                                                <td data-label="Status" scope="col">Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Student Name" scope="col">Student Name</td>
+                                                <td data-label="Qouta" scope="col">50 Session/s</td>
+                                                <td data-label="Used" scope="col">30 Session/s</td>
+                                                <td data-label="Remain" scope="col">20 Session/s</td>
+                                                <td data-label="Status" scope="col">Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Student Name" scope="col">Student Name</td>
+                                                <td data-label="Qouta" scope="col">50 Session/s</td>
+                                                <td data-label="Used" scope="col">30 Session/s</td>
+                                                <td data-label="Remain" scope="col">20 Session/s</td>
+                                                <td data-label="Status" scope="col">Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Student Name" scope="col">Student Name</td>
+                                                <td data-label="Qouta" scope="col">50 Session/s</td>
+                                                <td data-label="Used" scope="col">30 Session/s</td>
+                                                <td data-label="Remain" scope="col">20 Session/s</td>
+                                                <td data-label="Status" scope="col">Active</td>
+                                            </tr> -->
+
+                                        </tbody>
+                                    </table>
+                                    <!-- <nav aria-label="..." class="pagination-center">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item ">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav> -->
+                                </div>
+                                <div class="tab-pane fade show active" id="Installments" role="tabpanel"
+                                    aria-labelledby="Installments-tab">
+                                    <table class="table-resp">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Pay</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="inst_table_rows">
+                                            <!-- <tr>
+                                                <td data-label="Description" scope="col">Description</td>
+                                                <td data-label="Date" scope="col">20/10/2022</td>
+                                                <td data-label="Amount" scope="col">3,000</td>
+                                                <td data-label="Pay" scope="col"><button class="btn btn-primary" style="padding: 5px 35px;">Pay</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Description" scope="col">Description</td>
+                                                <td data-label="Date" scope="col">20/10/2022</td>
+                                                <td data-label="Amount" scope="col">3,000</td>
+                                                <td data-label="Pay" scope="col"><button class="btn btn-primary" style="padding: 5px 35px;">Pay</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Description" scope="col">Description</td>
+                                                <td data-label="Date" scope="col">20/10/2022</td>
+                                                <td data-label="Amount" scope="col">3,000</td>
+                                                <td data-label="Pay" scope="col"><button class="btn btn-primary" style="padding: 5px 35px;">Pay</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Description" scope="col">Description</td>
+                                                <td data-label="Date" scope="col">20/10/2022</td>
+                                                <td data-label="Amount" scope="col">3,000</td>
+                                                <td data-label="Pay" scope="col"><button class="btn btn-primary" style="padding: 5px 35px;">Pay</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Description" scope="col">Description</td>
+                                                <td data-label="Date" scope="col">20/10/2022</td>
+                                                <td data-label="Amount" scope="col">3,000</td>
+                                                <td data-label="Pay" scope="col"><button class="btn btn-primary" style="padding: 5px 35px;">Pay</button></td>
+                                            </tr> -->
+
+
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary btn-lg pay-btn"
+                                        style="display: block;margin: 50px auto;" id="payonce_btn" data-sale="20%">Pay
+                                        once</button>
+                                    <!-- <nav aria-label="..." class="pagination-center">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item ">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav> -->
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="tasksTap">
+                            <div class="card shadow mb-4 basic-info">
+                                <div class="card-body">
+                                    <div class="tasks-ques">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Alias error similique
+                                        aperiam itaque tenetur accusamus beatae hic ?</div>
+                                        <div class="answers-container">
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                       <button class="btn btn-primary" style="display: block; margin-left: auto;"> Submit </button> 
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4 basic-info">
+                                <div class="card-body">
+                                    <div class="tasks-ques">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Alias error similique
+                                        aperiam itaque tenetur accusamus beatae hic ?</div>
+                                        <div class="answers-container">
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                       <button class="btn btn-primary" style="display: block; margin-left: auto;"> Submit </button> 
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4 basic-info">
+                                <div class="card-body">
+                                    <div class="tasks-ques">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Alias error similique
+                                        aperiam itaque tenetur accusamus beatae hic ?</div>
+                                        <div class="answers-container">
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                       <button class="btn btn-primary" style="display: block; margin-left: auto;"> Submit </button> 
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4 basic-info">
+                                <div class="card-body">
+                                    <div class="tasks-ques">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Alias error similique
+                                        aperiam itaque tenetur accusamus beatae hic ?</div>
+                                        <div class="answers-container">
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                            <div class="answer-comp">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                       <button class="btn btn-primary" style="display: block; margin-left: auto;"> Submit </button> 
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="display: block; margin: auto; margin-bottom: 20px ;"> Submit All </button> 
+                        </div>
+                    </div>
+                    <!-- End of Content Wrapper -->
+
+                </div>
+                <!-- End of Page Wrapper -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- Certificate POPUP -- -- -- -- -- -- -- -- -- -- -- -- -->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -V- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <div class="modal fade" id="certView" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cert-container" id="element-to-print">
+                                    <img id="imgincert" src="" alt="">
+                                    <div class="student-name" id="student_cer_name">Mohammed Nabil</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="download_pdf">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- Feedback POPUP -- -- -- -- -- -- -- -- -- -- -- -- -->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -|- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -V- -- -- -- -- -- -- -- -- -- -- -- -- --->
+                <div class="modal fade" id="feedbackPop" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Feedback</h5>
+                                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="modal-body" id="feedback_place">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia asperiores debitis
+                                exercitationem ad, cumque dolore error explicabo temporibus consequatur amet rem quasi
+                                aspernatur id? Ea nobis temporibus minima accusamus sed.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; iSchool tech 2022</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="" id="logout_id">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/script.js"></script>
+    <script src="../database_functions_v2.js"></script>
+    <script src="../json_func_admin.js"></script>
+    <script src="../help_functions.js"></script>
+    <script src="../direction_func_folders.js"></script>
+    <script src="../payment_func.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+
+        Loading_page_set();
+
+
+        let url = window.location.href;
+        let params = (new URL(url)).searchParams;
+        var get_element = '';
+
+        get_element_username = params.get('username');
+        get_element_password = params.get('password');
+
+
+        if (get_element_username != '' && get_element_password != '' && get_element_username != null && get_element_password != null) {
+
+            localStorage.checkbox_client = 'on';
+            localStorage.username_client = get_element_username;
+            localStorage.password_client = get_element_password;
+
+        }
+
+        const rmCheck = document.getElementById("rememberMe");
+        var nameInput = document.getElementById("Username");
+        var passInput = document.getElementById("password");
+
+
+        $('#logout_id').click(function () {
+            nameInput.value = '';
+            passInput.value = '';
+            localStorage.username_client = '';
+            localStorage.password_client = '';
+            rmCheck.removeAttribute("checked");
+
+            localStorage.checkbox_client = '';
+
+            login_page_check();
+
+        });
+
+
+        waiting_login();
+
+        async function waiting_login() {
+            if (localStorage.checkbox_client && localStorage.checkbox_client !== "") {
+                rmCheck.setAttribute("checked", "checked");
+                nameInput.value = localStorage.username_client;
+                passInput.value = localStorage.password_client;
+
+
+                var value__ = await login_page_check_auto(nameInput.value, passInput.value);
+
+                console.log(value__);
+
+                if (!value__) { login_page_check(); }
+            } else {
+                rmCheck.removeAttribute("checked");
+                nameInput.value = "";
+                passInput.value = "";
+                login_page_check();
+
+            }
+        }
+
+
+        async function waiting_login() {
+            if (localStorage.checkbox_client && localStorage.checkbox_client !== "") {
+                rmCheck.setAttribute("checked", "checked");
+                nameInput.value = localStorage.username_client;
+                passInput.value = localStorage.password_client;
+
+                var value__ = await login_page_check_auto(nameInput.value, passInput.value);
+                if (!value__) { login_page_check(); }
+            } else {
+                rmCheck.removeAttribute("checked");
+                nameInput.value = "";
+                passInput.value = "";
+                login_page_check();
+
+            }
+        }
+
+
+
+        function lsRememberMe() {
+            localStorage.checkbox_client = 'on';
+            localStorage.username_client = nameInput.value;
+            localStorage.password_client = passInput.value;
+
+            // if (rmCheck.checked && nameInput.value !== "" && passInput.value !== "") {
+            //   localStorage.username_client = nameInput.value;
+            //   localStorage.password_client = passInput.value;
+
+            //   console.log(rmCheck.value);
+            //   localStorage.checkbox_client = rmCheck.value;
+            // } else {
+            //   localStorage.username_client = "";
+            //   localStorage.checkbox_client = "";
+            // }
+        }
+
+
+        function Loading_page_set() {
+            modal_1.style.display = "block";
+            document.getElementById("loading_location").innerHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
+        }
+
+        function Loading_page_clear() {
+            modal_1.style.display = "none";
+        }
+
+        $(".header .close-btn").click(function () {
+            $(".header .nav").animate({
+                right: "-85%",
+            },
+                300
+            );
+        });
+        $(".header .menu-btn").click(function () {
+            $(".header .nav").animate({
+                right: 0,
+            },
+                300
+            );
+        });
+
+    </script>
+
+</body>
+
+</html>

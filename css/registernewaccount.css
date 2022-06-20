@@ -1,0 +1,805 @@
+:root {
+    --blue-color: #1955CC;
+    --orange-color: #FD7D00;
+    --black-color: #2c2c2c;
+}
+
+
+* {
+    font-family: 'roboto';
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.86, var(--blue-color)));
+}
+.datepicker-container{
+    display: flex;
+}
+.datepicker-container.form-control{
+    width: auto;
+}
+
+.scheduletablehead {
+    font-weight: bold;
+    color: #2c2c2c70;
+    padding-bottom: 10px !important;
+}
+
+.scheduletableitem {
+    margin: 10px 0 !important;
+    background-color: #F6F6F6;
+    box-shadow: 0px 0px 10px 0px #00000005;
+    border-radius: 5px;
+    padding: 10px 0 !important;
+    cursor: pointer;
+    transition: 300ms;
+}
+.iti--allow-dropdown{
+    width: 100%;
+}
+.scheduletableitem:hover,
+.scheduletableitem.active {
+    background-color: var(--orange-color);
+    color: white;
+}
+
+.scheduletableitem .check {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #2c2c2c50;
+    display: block;
+    margin: auto;
+    border-radius: 100%;
+    position: relative;
+}
+
+.scheduletableitem .check.active {
+    position: relative;
+}
+
+.scheduletableitem .check.active::after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 10px;
+    content: "\f111";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--orange-color);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.right-align .nav-item:hover {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.right-align {
+    justify-content: right;
+}
+
+.coontent-container {
+    margin-top: 40px;
+}
+
+.headding h1 {
+    text-align: center;
+    font-weight: 900;
+    color: var(--black-color);
+    opacity: 0.8;
+}
+
+.headding p {
+    text-align: center;
+    color: var(--black-color);
+    opacity: 0.8;
+    margin-top: -15px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 300ms;
+    letter-spacing: 0;
+}
+
+.headding p:hover {
+    color: var(--blue-color);
+    letter-spacing: 1px;
+}
+
+.ms-dd-header {
+    background-color: white;
+}
+
+.ms-dd-header a {
+    white-space: nowrap;
+    padding-top: 20px !important;
+    padding-left: 20px !important;
+    background-color: white !important;
+}
+
+.opt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: none;
+}
+
+.twosides .form-floating {
+    width: 50%;
+}
+
+.row.body {
+    height: auto;
+    margin-right: 0;
+}
+
+
+.col.picture {
+    padding: 0;
+    margin: 0;
+}
+
+.col.picture img {
+    right: 0px;
+    margin-left: auto;
+    display: block;
+    width: 70%;
+    animation: pulse 2s infinite ease-in-out alternate;
+}
+
+.student-payment-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+}
+
+.student-payment-info .student-payment-labels {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.student-payment-info .student-payment-labels span {
+    margin: 0px 30px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container {
+    width: 350px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #2C2C2C33;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    height: auto;
+}
+
+.payment-plans-container .header {
+    background-color: #1955CC;
+    border-radius: 10px 10px 0 0;
+    color: white;
+    height: 45px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.step04 .row.body {
+    margin-top: 100px;
+}
+
+.step04 .row.mb-3 .col {
+    color: #2c2c2c80;
+}
+
+.step04 .row.mb-3 .col a {
+    color: #2c2c2c;
+}
+
+.btn.next {
+    margin: auto;
+    display: block;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.payment-plans-container .between {
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.payment-plans-container li {
+    margin-left: 40px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.payment-plans-container .price {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+}
+
+.payment-plans-container .offer-container {
+    display: flex;
+    padding: 15px;
+    padding-top: 0px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.payment-plans-container .offer-container span {
+    font-size: 13px;
+    color: var(--blue-color);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.payment-plans-container button {
+    background-color: #FD7D00;
+    color: white;
+    margin: auto;
+    display: block;
+    margin: 30px auto;
+}
+
+.payment-plans-container .price::before {
+    content: 'EGP';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    margin-left: -70px;
+    margin-top: -10px;
+}
+
+.payment-plans-container .price::after {
+    content: '/ Month';
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black-color);
+    bottom: -15px;
+    margin-right: -70px;
+    margin-top: -10px;
+}
+
+.dropdown {
+    width: 50%;
+}
+
+.row.headding {
+    margin-right: 0;
+}
+
+.title-right {
+    font-size: 4.0vw;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 70px;
+    margin: auto;
+    display: block;
+    width: 70%;
+    margin-bottom: 40px;
+}
+
+.title-right b {
+    color: var(--orange-color);
+}
+
+.dropdown button {
+    background-color: white;
+    color: var(--black-color);
+    width: 100%;
+    transition: 300ms;
+    height: 80%;
+    border: #2c2c2c30 0.5px solid;
+}
+
+.dropdown button:hover,
+.dropdown button:focus {
+    background-color: var(--blue-color);
+}
+
+.dropdown ul {
+    max-height: 270px;
+    overflow-x: auto;
+    width: 95%;
+}
+
+.ms-dd {
+    background-color: transparent !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.ms-dd .ms-options {
+    width: 95% !important;
+}
+
+.ms-list-option.option-selected {
+    height: 100% !important;
+}
+
+.ms-dd .ms-dd-header {
+    height: 100% !important;
+}
+
+.country-menu {
+    background-color: white;
+    border: 1px solid #2C2C2C26;
+    box-shadow: 0px 4px 4px 0px #0000000A;
+    margin-top: 0px;
+    max-height: 270px;
+    overflow-x: auto;
+    display: none;
+}
+
+.country-menu li {
+    list-style: none;
+}
+
+input.form-control {
+    padding: 0 30px;
+    color: #2c2c2c;
+}
+
+.twosides {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.form-floating label {
+    padding-left: 30px;
+    color: #2c2c2c80;
+}
+
+.btn.signup {
+    margin: auto;
+    display: block;
+    width: 200px;
+    margin-top: 20px;
+}
+
+hr {
+    line-height: 20px;
+}
+
+@media screen and (max-width: 1150px) {
+    .row.mb-3.country {
+        width: 50% !important;
+        padding-right: 0;
+    }
+    .header {
+        display: none;
+    }
+    .mobile-header {
+        display: flex;
+    }
+    .col.picture {
+        display: none;
+    }
+    .form {
+        padding: 0 20px;
+    }
+    .row.mb-3.country {
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .coontent-container {
+        margin-top: 20px;
+    }
+    .headding h1 {
+        font-size: 30px;
+        padding: 0 60px;
+    }
+    .headding p {
+        font-size: 13px;
+    }
+    .form div {
+        font-size: 12px;
+    }
+   
+    .form-floating {
+        margin-bottom: 10px !important;
+        height: 45px;
+    }
+    .form-floating .form-control {
+        height: 40px;
+        font-size: 13px;
+        padding: 1.5rem 0.75rem;
+    }
+    .form-floating label {
+        margin-top: -12px;
+        margin-left: -10px;
+        padding: 1.3rem 1.75rem;
+    }
+    .ms-dd-header a {
+        white-space: nowrap;
+        padding-top: 15px !important;
+        padding-left: 10px !important;
+    }
+    .row-field{
+        margin-bottom: 20px;
+}
+.ms-dd .ms-list-option.option-selected, .ms-dd .ms-optgroup ul .ms-list-option.option-selected{
+    padding-right: 50px !important;
+}
+.row.twosides{
+    flex-direction: column;
+}
+.datepicker-container .form-floating label {
+    padding-left: 19px !important;
+    padding-top: 30px;
+    font-size: 14px;
+}
+}
+
+.back {
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.header {
+    padding: 20px 15%;
+  }
+  .header img {
+    height: 40px;
+  }
+  .header li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2c2c2c80;
+  }
+  .header ul {
+    padding: 0;
+    margin: 0;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  .header .nav {
+    display: flex;
+    justify-content: right;
+    height: 100%;
+    align-items: center;
+  }
+  .header .nav .login-nav,
+  .header .nav .main-nav {
+    display: flex;
+    align-items: center;
+  }
+  .header .nav .nav-item {
+    margin: 0 10px;
+    position: relative;
+    transition: 300ms;
+    cursor: pointer;
+  }
+  .header .nav .nav-item.active {
+    color: #1955cc;
+    font-weight: 700;
+  }
+  .header .nav .nav-item.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background-color: #1955cc;
+    left: 0;
+    bottom: 0;
+  }
+  .header .nav button {
+    margin-left: 10px;
+  }
+  .header .fa-solid {
+    display: none;
+  }
+  b {
+    color: #fd7d00;
+  }
+  .mb-3 .form-control{
+    height: 60px;
+    position: relative;
+}
+.mb-3.date.months .days-slider{
+    align-content: flex-start;
+    height: 150px;
+    bottom: -150px;
+}
+.datepicker-container .form-floating{
+    position: relative;
+}
+.datepicker-container .form-floating label{
+    padding-left: 8px;
+ }
+ 
+.datepicker-container ul {
+    position: absolute;
+    z-index: 1;
+    bottom: -300px;
+    left: 0px;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #2c2c2c20;
+    padding: 0;
+    margin:0 ;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+    justify-content: center;
+    color: #2c2c2c90;
+    z-index: 10;
+}
+.datepicker-container .months ul{
+    left: 0px;
+}
+.datepicker-container .days ul{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.datepicker-container .years ul{
+    right: 0;
+    left: auto;
+}
+.datepicker-container ul li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin: 5px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 300ms;
+    border: 3px solid white;
+    border-radius: 100%;
+}
+.datepicker-container ul li:hover,
+.datepicker-container ul li.active{
+border: 3px solid #1955CC;
+border-radius: 100%;
+color: #2c2c2c;
+}
+.mb-3.date.years .days-slider li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin: 5px;
+    height: 35px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 300ms;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+.error{
+    border-color: red;
+}
+.mb-3.date.years .days-slider li:hover,
+.mb-3.date.years .days-slider li.active{
+    border: 3px solid #1955CC;
+border-radius: 5px;
+color: #2c2c2c;
+}
+.mb-3.date{
+    position: relative;
+}
+
+.datepicker-container{
+    display: flex;
+}
+
+.datepicker-container .form-control{
+    width: 90%;
+    padding: 0 10px;
+}
+label{
+    margin-bottom: 10px;
+}
+
+  @media screen and (max-width: 1200px) {
+  
+    .header img {
+      height: 45px;
+    }
+    .header {
+      padding: 20px 90px;
+    }
+    .header .fa-solid {
+      display: block;
+      margin-left: auto;
+    }
+    .header .fa-solid.fa-xmark {
+      font-size: 18px;
+      color: #fff;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+    .header .nav {
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 85%;
+      z-index: 100;
+      right: -85%;
+      background-color: #2c2c2c80;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+    .header .nav button {
+      margin-top: 20px;
+    }
+    .header .nav ul {
+      flex-direction: column;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+    .header .nav .nav-item {
+      width: 100%;
+      padding: 0;
+      padding: 15px 0;
+      color: #fff;
+      font-size: 15px;
+    }
+    .header .nav .main-nav {
+      width: 100%;
+      margin-top: 40px;
+    }
+    .header .nav .login-nav {
+      width: 100%;
+    }
+    .header .nav .nav-item.active {
+      background-color: #1955cc;
+      position: relative;
+      width: 100%;
+      color: #fff;
+    }
+    .vertical-div {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 870px) {
+  .header img {
+      height: 30px;
+    }
+    .header {
+      padding: 10px 50px;
+    }
+    .header .fa-solid {
+      display: block;
+      margin-left: auto;
+    }
+    .header .fa-solid.fa-xmark {
+      font-size: 18px;
+      color: #fff;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+    .header .nav {
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 85%;
+      z-index: 100;
+      right: -85%;
+      background-color: #2c2c2c80;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+    .header .nav button {
+      margin-top: 20px;
+    }
+    .header .nav ul {
+      flex-direction: column;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+    .header .nav .nav-item {
+      width: 100%;
+      padding: 0;
+      padding: 15px 0;
+      color: #fff;
+      font-size: 15px;
+    }
+    .header .nav .main-nav {
+      width: 100%;
+      margin-top: 40px;
+    }
+    .header .nav .login-nav {
+      width: 100%;
+    }
+    .header .nav .nav-item.active {
+      background-color: #1955cc;
+      position: relative;
+      width: 100%;
+      color: #fff;
+    }
+    .vertical-div {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 550px) {
+  .header {
+      padding: 10px 20px;
+    }
+    .row-field{
+        margin-bottom: 20px;
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .header .nav .nav-item:hover {
+      color: #1955cc;
+    }
+  
+  }
